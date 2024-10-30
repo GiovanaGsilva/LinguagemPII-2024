@@ -4,6 +4,9 @@
          if ($_GET ['acao']=='limpa'){
             echo limpar_dados();
          }
+         if ($_GET['acao']=='remove'){
+            echo registrar_saida($_GET['cpf']);
+         }
      }
 ?>
 

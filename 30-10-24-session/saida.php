@@ -37,7 +37,7 @@ include 'inc/funcoes.php';
                    echo '<td>'.$dados['nome'].'</td>';
                    echo '<td>'.$dados['cpf'].' </td>';
                    echo '<td>'.$dados['data'].' </td>';
-                   echo '<td><a href="a">Saida </a> </td>';
+                   echo '<td><a href="index.php?acao=remove&'.$dados['cpf'].'">Saida </a> </td>';
                 }
             }
 
