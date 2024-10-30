@@ -1,3 +1,11 @@
+<?php
+
+include 'inc/funcoes.php';
+
+?>
+
+
+
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -16,15 +24,24 @@
                 </tr>
             </thead>
            <tbody>
-            <tr> 
-                <td colspan="4">Nenhum Registro</td>
-            </tr>
-            <tr>
-                <td>Giovana</td>
-                <td>Giovana</td>
-                <td>Giovana</td>
-                <td> <a href="#">Saída</a></td>
-            </tr>
+
+           <?php
+           if (empty($_SESSION['reg'])){
+               echo '<tr>';
+               echo '<td colspan="4">Nenhum Registro </td>';
+               echo '<tr>';
+
+            }else{
+                foreach(buscar_registros() as $dados){
+                   echo '<tr>';
+                   echo '<td>'.$dados['nome'].'</td>';
+                   echo '<td>'.$dados['cpf'].' </td>';
+                   echo '<td>'.$dados['data'].' </td>';
+                   echo '<td><a href="a">Saida </a> </td>';
+                }
+            }
+
+?>
            </tbody>
         </table>
         <a href="index.php">Voltar</a>

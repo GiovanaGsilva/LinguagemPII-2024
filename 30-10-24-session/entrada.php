@@ -1,3 +1,11 @@
+<?php
+
+//não usa required
+    include 'inc/funcoes.php';
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,7 +15,7 @@
 </head>
 <body>
     <form>
-        <h3> Nome </h3>
+        <h3> SISTEMA DE ENTRADA E SAIDA</h3>
         <label> Nome </label>
         <input name="cpnome"> <br/>
         <label> CPF</label>
@@ -18,3 +26,10 @@
     </form>
 </body>
 </html>
+
+<?php 
+
+     if(!empty($_GET)){
+       echo cadastrar_entrada($_GET['cpnome'], $_GET['cpcpf']);
+     }
+?>

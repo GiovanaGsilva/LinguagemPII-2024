@@ -1,3 +1,12 @@
+<?php 
+     include 'inc/funcoes.php';
+     if (!empty($_GET))   {
+         if ($_GET ['acao']=='limpa'){
+            echo limpar_dados();
+         }
+     }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,7 +18,7 @@
     <h3>Sistema de Entrada e Saída</h3>
     <a href="entrada.php">Registrar entrada</a> <br/>
     <a href="saida.php">Registrar saída</a> <br/>
-    <a href="index.php">Limpar dados</a>
+    <a href="index.php?acao=limpa">Limpar dados</a>
 
     
 </body>

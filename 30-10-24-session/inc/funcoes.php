@@ -1,6 +1,6 @@
 <?php
  session_start();
- $registro = empty(($_SESSION['reg']))? $registros = array() : $_SESSION['reg'];
+ $registros = empty(($_SESSION['reg']))? $registros = array() : $_SESSION['reg'];
  //verifica se existe na session uma variável chamada ref, caso não exista criar um vetor 
  //vazio, caso sim, pegue os valores armazenados nela. 
  
