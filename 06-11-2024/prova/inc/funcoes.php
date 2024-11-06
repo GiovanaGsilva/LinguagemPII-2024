@@ -3,7 +3,7 @@
  session_start();
 
 $tarefas = empty($_SESSION['tarefas'])? array(): $_SESSION['tarefas'];
-$id =  empty($_SESSION['ids'])? 0: $_SESSION['idis'];
+$ids =  empty($_SESSION['ids'])? 1: $_SESSION['ids'];
 
 //empty = se estiver vazio
 //tarefas vai receber um vetor vazio de for verdade
@@ -18,7 +18,6 @@ function cadastrar ($fazer, $prioridade){
         'fazer'=>$fazer,
         'data'=>date('j/m/y'),
         'prioridade'=>$prioridade,
-
     ));
 
     $_SESSION['tarefas']=$tarefas;
@@ -37,7 +36,17 @@ function listar(){
 
 
 
-function remocao(){
+function remover($id ){
+    global $tarefas;
+    $pos = array_search ($id, array_column($tarefas, 'id'));
+    if($pos>=0)
+    array_splice($tarefas, $pos, 1);
+    $_SESSION['tarefas']=$tarefas;
+    return 'Tarefa removida com sucesso!';
 
 }
+function limpar(){
+    session_destroy();
+    return 'Dados removidos com sucesso!';
+}//limpar
 ?>
