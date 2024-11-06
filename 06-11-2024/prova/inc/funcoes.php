@@ -16,6 +16,7 @@ function cadastrar ($fazer, $prioridade){
     array_push($tarefas, array(
         'id'=>$ids,
         'fazer'=>$fazer,
+        'data'=>date('j/m/y'),
         'prioridade'=>$prioridade,
 
     ));
@@ -23,7 +24,20 @@ function cadastrar ($fazer, $prioridade){
     $_SESSION['tarefas']=$tarefas;
     $ids++;
     $_SESSION['ids']= $ids;
-}
 
-//cadastrar ('arrumar a mala', 'baixa)
+    return 'Cadastrado com sucesso';
+} //cadastrar ('arrumar a mala', 'baixa)
+
+
+function listar(){
+    global $tarefas;
+    return $tarefas;
+}//listar
+
+
+
+
+function remocao(){
+
+}
 ?>
