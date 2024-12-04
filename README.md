@@ -1,2 +1,0 @@
-# LinguagemPII-2024
- 
